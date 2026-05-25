@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Messenger Global</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app-container">
+    <div id="auth-screen" class="screen">
+        <div class="auth-card">
+            <h2>🌸 Pink Messenger Global</h2>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Multi-Device Active Network Chatroom</p>
+            <input type="text" id="reg-username" placeholder="Type: Angel, Ellen, Roselyn, Jelly...">
+            <button class="btn" id="loginBtn">Enter Chatroom</button>
+        </div>
+    </div>
+
+    <div id="main-screen" class="screen hidden" style="padding:0; flex-direction: row;">
+        <div id="sidebar">
+            <div class="user-profile-bar">
+                <div class="user-avatar-info">
+                    <img id="my-avatar" src="https://i.imgur.com/3ZQ3Z6v.png" class="avatar" alt="Me">
+                    <div>
+                        <strong id="my-name">Username</strong>
+                        <div style="display:flex; align-items:center; gap:5px; font-size:11px;">
+                            <span class="status-dot status-online"></span> Active
+                        </div>
+                    </div>
+                </div>
+                <button class="icon-btn" id="themeBtn">🌓</button>
+            </div>
+
+            <div class="list-container">
+                <div class="list-header">
+                    <span>Groups</span>
+                    <button class="round-btn-sm" id="createGroupBtn">+</button>
+                </div>
+                <div id="group-list"></div>
+                <div class="list-header">Direct Messages</div>
+                <div id="users-list"></div>
+            </div>
+        </div>
+
+        <div id="chat-area">
+            <div id="blank-chat-view" class="no-chat">
+                <h3>🌸 Welcome to Pink Messenger Live 🌸</h3>
+                <p>Select a user or group to start real-time multi-device chat</p>
+            </div>
+
+            <div id="active-chat-view" class="hidden" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="chat-header">
+                    <div class="user-avatar-info">
+                        <img id="chat-target-avatar" src="" class="avatar">
+                        <div>
+                            <strong id="chat-target-name">Chat Target</strong>
+                            <div id="chat-target-status" style="font-size:11px; color: var(--text-muted);"></div>
+                        </div>
+                    </div>
+                    <button id="add-member-btn" class="round-btn-sm hidden">+👤</button>
+                </div>
+                <div class="messages-box" id="messages-box"></div>
+                <div id="typing-indicator"></div>
+                <div class="input-bar">
+                    <label for="img-input" class="icon-btn">🖼️</label>
+                    <input type="file" id="img-input" accept="image/*" style="display:none;">
+                    <input type="text" id="message-input" placeholder="Type a pinky message...">
+                    <button class="icon-btn" id="sendMsgBtn">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="bot.js"></script>
+</body>
+</html>
